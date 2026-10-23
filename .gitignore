@@ -1,0 +1,17 @@
+# C# / .NET build files
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Sensitive configuration
+.env
+.env.*
+appsettings.Development.json
+*.pfx
+
+# Logs
+*.log
