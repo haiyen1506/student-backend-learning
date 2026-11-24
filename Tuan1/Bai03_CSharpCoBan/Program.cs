@@ -6,6 +6,7 @@ double diem = 8.5; // double lưu số thực như là 8.5
 bool duTuoi = tuoi >=18; // bool lưu giá trị logic true hoặc false
 
 Console.WriteLine($"Họ tên: {hoTen}");
+Console.WriteLine($"Điểm: {diem}");
 Console.WriteLine($"Tuổi ban đầu:{tuoi}");
 
 tuoi = 21;

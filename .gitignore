@@ -15,3 +15,5 @@ appsettings.Development.json
 
 # Logs
 *.log
+# NuGet generated files
+**/NuGet/Migrations/
