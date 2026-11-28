@@ -122,3 +122,125 @@ Các thao tác đã thực hành:
 - `git push` — đưa code lên GitHub.
 - `.gitignore` — loại trừ các file không cần thiết.
 
+
+# Student Management API - Week 03
+
+## 1. Giới thiệu
+
+Dự án RESTful Web API quản lý sinh viên được xây dựng
+bằng ASP.NET Core Web API (.NET 8).
+
+Dự án thuộc lộ trình học ASP.NET Core Backend Developer.
+
+## 2. Công nghệ sử dụng
+
+- C#
+- .NET 8
+- ASP.NET Core Web API
+- Swagger / OpenAPI
+- LINQ
+- Dependency Injection
+- Data Annotations
+- Git và GitHub
+
+## 3. Chức năng
+
+- Lấy danh sách sinh viên.
+- Tìm sinh viên theo mã.
+- Thêm sinh viên.
+- Cập nhật thông tin sinh viên.
+- Xóa sinh viên.
+- Kiểm tra trùng mã sinh viên.
+- Tìm kiếm sinh viên theo tên.
+- Lọc sinh viên theo tuổi.
+- Sắp xếp tăng dần và giảm dần.
+- Phân trang dữ liệu.
+- Kiểm tra dữ liệu đầu vào.
+- Chuẩn hóa API Response.
+
+## 4. Cấu trúc project
+
+- Controllers: Tiếp nhận và xử lý HTTP Request.
+- Models: Mô tả dữ liệu sinh viên.
+- DTOs: Quy định dữ liệu đầu vào và đầu ra.
+- Services: Xử lý logic nghiệp vụ.
+- Common: Chứa cấu trúc ApiResponse dùng chung.
+- Program.cs: Cấu hình và khởi chạy ứng dụng.
+
+## 5. API Endpoints
+
+| Method | Endpoint | Chức năng |
+|--------|----------|-----------|
+| GET | /api/students | Lấy danh sách |
+| GET | /api/students/{maSinhVien} | Tìm theo mã |
+| POST | /api/students | Thêm sinh viên |
+| PUT | /api/students/{maSinhVien} | Cập nhật |
+| DELETE | /api/students/{maSinhVien} | Xóa |
+
+## 6. Query Parameters
+
+| Parameter | Ý nghĩa |
+|-----------|---------|
+| tuoiToiThieu | Lọc theo tuổi tối thiểu |
+| keyword | Tìm kiếm theo tên |
+| giamDan | Sắp xếp giảm dần |
+| page | Số trang |
+| pageSize | Số sinh viên mỗi trang |
+
+## 7. HTTP Status Codes
+
+- 200 OK
+- 201 Created
+- 204 No Content
+- 400 Bad Request
+- 404 Not Found
+- 409 Conflict
+
+## 8. Cấu trúc ApiResponse
+
+    {
+        "success": true,
+        "message": "Thanh cong",
+        "data": [],
+        "errors": null
+    }
+
+HTTP 204 không chứa Response Body.
+
+## 9. Hướng dẫn chạy project
+
+Yêu cầu: Cài đặt .NET 8 SDK.
+
+Chạy terminal tại thư mục StudentManagementAPI:
+
+    dotnet restore
+    dotnet build
+    dotnet run
+
+Truy cập Swagger:
+
+    http://localhost:5259/swagger
+
+## 10. Kiến thức đã thực hành
+
+- HTTP và RESTful API.
+- Controller và Routing.
+- Model Binding.
+- DTO và Validation.
+- Service và Interface.
+- Dependency Injection.
+- CRUD.
+- LINQ.
+- Pagination.
+- Chuẩn hóa API Response.
+
+## 11. Hạn chế hiện tại
+
+- Dữ liệu được lưu trong RAM.
+- Dữ liệu thay đổi sẽ mất khi khởi động lại ứng dụng.
+- Chưa kết nối SQL Server.
+- Chưa xử lý truy cập đồng thời an toàn.
+- Chưa có Authentication và Authorization hoàn chỉnh.
+- Chưa có Global Exception Handling.
+- Chưa hoàn thành đầy đủ các trường hợp kiểm thử.
+- Chưa có kiểm thử tự động.
